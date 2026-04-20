@@ -1,0 +1,66 @@
+---
+import { Menu, X } from 'lucide-astro';
+---
+
+<header class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-20">
+      <!-- Logo as text (placeholder for image) -->
+      <a href="#" class="flex items-center space-x-2">
+        <span class="font-montserrat font-bold text-3xl tracking-tight text-primary-blue">
+          S<span class="text-primary-green relative inline-block">K</span>ALA
+        </span>
+        <span class="text-xs uppercase tracking-widest text-primary-green hidden sm:inline border-l border-gray-300 pl-2 ml-2 mt-1">
+          Gestión<br/>Integral
+        </span>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex space-x-8 items-center">
+        <a href="#servicios" class="text-gray-dark hover:text-primary-green font-medium transition-colors text-sm uppercase tracking-wide">Servicios</a>
+        <a href="#metodologia" class="text-gray-dark hover:text-primary-green font-medium transition-colors text-sm uppercase tracking-wide">Metodología</a>
+        <a href="#nosotros" class="text-gray-dark hover:text-primary-green font-medium transition-colors text-sm uppercase tracking-wide">Nosotros</a>
+        <a href="#contacto" class="bg-primary-blue text-white px-6 py-2.5 rounded-md hover:bg-primary-blue/90 transition-all hover:shadow-lg font-medium text-sm">
+          Agenda Consultoría
+        </a>
+      </nav>
+
+      <!-- Mobile menu button -->
+      <div class="flex items-center md:hidden">
+        <button id="mobile-menu-btn" class="text-primary-blue hover:text-primary-green focus:outline-none p-2" aria-label="Abrir menú">
+          <Menu class="w-7 h-7" />
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation -->
+  <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-xl absolute w-full">
+    <div class="px-4 py-6 space-y-4 flex flex-col">
+      <a href="#servicios" class="mobile-link text-gray-dark font-medium text-lg border-b border-gray-100 pb-2">Servicios</a>
+      <a href="#metodologia" class="mobile-link text-gray-dark font-medium text-lg border-b border-gray-100 pb-2">Metodología</a>
+      <a href="#nosotros" class="mobile-link text-gray-dark font-medium text-lg border-b border-gray-100 pb-2">Nosotros</a>
+      <a href="#contacto" class="mobile-link bg-primary-blue text-white px-6 py-3 rounded-md font-medium text-center mt-4">
+        Agenda Consultoría Gratuita
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Simple script for mobile menu toggle
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const links = document.querySelectorAll('.mobile-link');
+
+  btn?.addEventListener('click', () => {
+    menu?.classList.toggle('hidden');
+  });
+
+  // Close menu when clicking a link
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      menu?.classList.add('hidden');
+    });
+  });
+</script>

@@ -1,0 +1,26 @@
+---
+import { MessageCircle } from 'lucide-astro';
+
+interface Props {
+  phoneNumber: string; // Ej: 573001234567
+  message?: string;
+}
+
+const { phoneNumber, message = "Hola, me gustaría agendar una consultoría gratuita para mi MiPyME." } = Astro.props;
+const waLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+---
+
+<a 
+  href={waLink} 
+  target="_blank" 
+  rel="noopener noreferrer"
+  class="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-xl hover:scale-110 transition-transform duration-300 flex items-center justify-center group"
+  aria-label="Contactar por WhatsApp"
+>
+  <MessageCircle class="w-7 h-7" />
+  
+  <!-- Tooltip that shows on hover -->
+  <span class="absolute right-full mr-4 bg-gray-dark text-white text-xs font-medium px-3 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none before:content-[''] before:absolute before:top-1/2 before:-right-2 before:-translate-y-1/2 before:border-[6px] before:border-transparent before:border-l-gray-dark">
+    Escríbenos por WhatsApp
+  </span>
+</a>

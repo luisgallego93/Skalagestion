@@ -1,0 +1,37 @@
+---
+import { CheckCircle2 } from 'lucide-astro';
+
+interface Props {
+  title: string;
+  description: string;
+  icon: any; // We'll pass the lucide icon component
+  features: string[];
+  isHighlighted?: boolean;
+}
+
+const { title, description, icon: Icon, features, isHighlighted = false } = Astro.props;
+---
+
+<div class={`relative group bg-white rounded-2xl p-8 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl border ${isHighlighted ? 'border-primary-green shadow-md' : 'border-gray-100'}`}>
+  {isHighlighted && (
+    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary-green text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+      Más Solicitado
+    </div>
+  )}
+
+  <div class={`w-14 h-14 rounded-xl flex items-center justify-center mb-6 transition-colors duration-300 ${isHighlighted ? 'bg-primary-green text-white' : 'bg-primary-blue/5 text-primary-blue group-hover:bg-primary-blue group-hover:text-white'}`}>
+    <Icon class="w-7 h-7" />
+  </div>
+
+  <h3 class="text-xl font-montserrat font-bold text-gray-dark mb-3">{title}</h3>
+  <p class="text-gray-500 text-sm mb-6 leading-relaxed min-h-[60px]">{description}</p>
+
+  <ul class="space-y-3">
+    {features.map((feature) => (
+      <li class="flex items-start">
+        <CheckCircle2 class="w-5 h-5 text-primary-green shrink-0 mr-3 mt-0.5" />
+        <span class="text-sm text-gray-600 font-medium">{feature}</span>
+      </li>
+    ))}
+  </ul>
+</div>

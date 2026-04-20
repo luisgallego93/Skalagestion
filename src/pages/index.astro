@@ -1,11 +1,443 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import FloatingWhatsApp from '../components/FloatingWhatsApp.astro';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import { FileText, Building2, TrendingUp, CheckCircle, Download, Award, Linkedin, ShieldCheck, Shield, BarChart, BookOpen, Settings, Users, Search, PenTool } from 'lucide-astro';
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Skala Gestión Integral | SST y Consultoría para MiPyMEs en Colombia">
+  <Navbar />
+  
+  <main>
+    <Hero />
+
+    <!-- Sección de Dolor / Contexto -->
+    <section class="py-20 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl lg:text-4xl font-montserrat font-bold text-primary-blue mb-6">
+          ¿Cansado de "apagar incendios" y preocupado por la <span class="text-primary-green">burocracia legal</span>?
+        </h2>
+        <p class="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+          Sabemos que cumplir con la normativa de SST es obligatorio, pero para una microempresa el verdadero obstáculo es el desorden: el "todos hacen de todo" y la pérdida de conocimiento cuando alguien se va. En Skala, unimos la Seguridad y Salud en el Trabajo con la Ingeniería Industrial para estructurar tu negocio. Transformamos las obligaciones legales y el caos operativo en procesos estandarizados para que des el salto definitivo: de comerciante a empresario.
+        </p>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
+          <div class="p-6 bg-gray-50 rounded-xl border border-gray-100 flex flex-col items-center text-center">
+            <div class="w-12 h-12 rounded-lg bg-primary-green/10 text-primary-green flex items-center justify-center mb-4">
+              <Shield class="w-6 h-6" />
+            </div>
+            <h4 class="font-bold text-gray-800 mb-2">Cumplimiento Legal</h4>
+            <p class="text-sm text-gray-500">Nos especializamos únicamente en empresas cuya actividad económica está clasificada en Riesgo 1, 2 y 3.</p>
+          </div>
+          <div class="p-6 bg-gray-50 rounded-xl border border-gray-100 flex flex-col items-center text-center">
+            <div class="w-12 h-12 rounded-lg bg-primary-blue/10 text-primary-blue flex items-center justify-center mb-4">
+              <Users class="w-6 h-6" />
+            </div>
+            <h4 class="font-bold text-gray-800 mb-2">Organización Interna</h4>
+            <p class="text-sm text-gray-500">Definimos organigramas y responsabilidades claras. Adiós al "todos hacen de todo".</p>
+          </div>
+          <div class="p-6 bg-gray-50 rounded-xl border border-gray-100 flex flex-col items-center text-center">
+            <div class="w-12 h-12 rounded-lg bg-teal-500/10 text-teal-600 flex items-center justify-center mb-4">
+              <Settings class="w-6 h-6" />
+            </div>
+            <h4 class="font-bold text-gray-800 mb-2">Procesos Eficientes</h4>
+            <p class="text-sm text-gray-500">Documentamos cómo opera tu negocio para que no dependa 100% de ti.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fase 1: Diseño (Pago Único) -->
+    <section id="servicios" class="py-24 bg-gray-50 relative">
+      <div class="absolute inset-0 bg-primary-blue/5 skew-y-3 transform origin-top-left -z-0"></div>
+      
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+          <span class="text-primary-green font-bold tracking-wider text-sm uppercase">Nuestras Soluciones</span>
+          <h2 class="text-3xl lg:text-4xl font-montserrat font-bold text-primary-blue mt-2 mb-4">Plan de Implementación (Pago Único)</h2>
+          <p class="text-gray-600 mb-4">La etapa de organización estructural para tu empresa. Cumplimiento legal y procesos claros diseñados a la medida.</p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 mb-16">
+          <div class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg border border-gray-100 transition-all duration-300 flex flex-col">
+            <div class="w-14 h-14 rounded-xl bg-gray-100 text-gray-600 flex items-center justify-center mb-6">
+              <Shield class="w-7 h-7" />
+            </div>
+            <h3 class="text-2xl font-montserrat font-bold text-primary-blue mb-2">Diseño SST Básico (Legal)</h3>
+            <p class="text-sm text-gray-500 mb-6">Enfoque: Cumplimiento estricto de la Resolución 0312 para empresas de {'<10'} trabajadores.</p>
+            <ul class="space-y-3 flex-1">
+              <li class="flex items-start"><CheckCircle class="w-5 h-5 text-primary-green shrink-0 mr-3 mt-0.5" /><span class="text-sm text-gray-600 font-medium">Asignación del Responsable del SG-SST.</span></li>
+              <li class="flex items-start"><CheckCircle class="w-5 h-5 text-primary-green shrink-0 mr-3 mt-0.5" /><span class="text-sm text-gray-600 font-medium">Afiliación a Seguridad Social Integral.</span></li>
+              <li class="flex items-start"><CheckCircle class="w-5 h-5 text-primary-green shrink-0 mr-3 mt-0.5" /><span class="text-sm text-gray-600 font-medium">Plan de Capacitación en SST.</span></li>
+              <li class="flex items-start"><CheckCircle class="w-5 h-5 text-primary-green shrink-0 mr-3 mt-0.5" /><span class="text-sm text-gray-600 font-medium">Plan Anual de Trabajo.</span></li>
+              <li class="flex items-start"><CheckCircle class="w-5 h-5 text-primary-green shrink-0 mr-3 mt-0.5" /><span class="text-sm text-gray-600 font-medium">Evaluaciones Médicas Ocupacionales.</span></li>
+              <li class="flex items-start"><CheckCircle class="w-5 h-5 text-primary-green shrink-0 mr-3 mt-0.5" /><span class="text-sm text-gray-600 font-medium">Identificación de Peligros y Riesgos (GTC 45).</span></li>
+              <li class="flex items-start"><CheckCircle class="w-5 h-5 text-primary-green shrink-0 mr-3 mt-0.5" /><span class="text-sm text-gray-600 font-medium">Medidas de Prevención y Control.</span></li>
+            </ul>
+          </div>
+
+          <div class="bg-white rounded-2xl p-8 shadow-xl border-2 border-primary-green transition-all duration-300 relative transform md:-translate-y-4 flex flex-col">
+            <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary-green text-white px-4 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+               Recomendado
+            </div>
+            <div class="w-14 h-14 rounded-xl bg-primary-green/10 text-primary-green flex items-center justify-center mb-6">
+              <BarChart class="w-7 h-7" />
+            </div>
+            <h3 class="text-2xl font-montserrat font-bold text-primary-blue mb-2">Estructura Organizacional y Conocimiento</h3>
+            <p class="text-sm text-gray-500 mb-6">Enfoque: Deja de operar como un comerciante empírico y define las bases de tu empresa.</p>
+            <ul class="space-y-3 flex-1">
+              <li class="flex items-start"><CheckCircle class="w-5 h-5 text-primary-green shrink-0 mr-3 mt-0.5" /><span class="text-sm text-gray-600 font-medium">SG-SST Implementado para Riesgo 1, 2 y 3.</span></li>
+              <li class="flex items-start"><CheckCircle class="w-5 h-5 text-primary-green shrink-0 mr-3 mt-0.5" /><span class="text-sm text-gray-600 font-medium">Definición de Misión, Visión y Valores Corporativos.</span></li>
+              <li class="flex items-start"><CheckCircle class="w-5 h-5 text-primary-green shrink-0 mr-3 mt-0.5" /><span class="text-sm text-gray-600 font-medium">Diseño de Organigrama (Líneas de mando claras).</span></li>
+              <li class="flex items-start"><CheckCircle class="w-5 h-5 text-primary-green shrink-0 mr-3 mt-0.5" /><span class="text-sm text-gray-600 font-medium">Manual de Funciones Básico (Responsabilidades por cargo).</span></li>
+              <li class="flex items-start"><CheckCircle class="w-5 h-5 text-primary-green shrink-0 mr-3 mt-0.5" /><span class="text-sm text-gray-600 font-medium">Sistema de Inducción de Personal (Aprendizaje rápido).</span></li>
+            </ul>
+          </div>
+
+          <div class="bg-gray-50 rounded-2xl p-8 shadow-sm hover:shadow-lg border border-gray-100 transition-all duration-300 flex flex-col">
+            <div class="w-14 h-14 rounded-xl bg-primary-blue/10 text-primary-blue flex items-center justify-center mb-6">
+              <BookOpen class="w-7 h-7" />
+            </div>
+            <h3 class="text-2xl font-montserrat font-bold text-primary-blue mb-2">Gestión por Procesos y Eficiencia</h3>
+            <p class="text-sm text-gray-500 mb-6">Enfoque: El paquete integral. Estandarizamos tu operación para que sea rentable y escalable.</p>
+            <ul class="space-y-3 flex-1">
+              <li class="flex items-start"><CheckCircle class="w-5 h-5 text-primary-green shrink-0 mr-3 mt-0.5" /><span class="text-sm text-gray-600 font-medium">Incluye Diseño SST + Estructura y Conocimiento.</span></li>
+              <li class="flex items-start"><CheckCircle class="w-5 h-5 text-primary-green shrink-0 mr-3 mt-0.5" /><span class="text-sm text-gray-600 font-medium">Estandarización de 3 a 5 Procesos Operativos Clave.</span></li>
+              <li class="flex items-start"><CheckCircle class="w-5 h-5 text-primary-green shrink-0 mr-3 mt-0.5" /><span class="text-sm text-gray-600 font-medium">Creación de Manuales y Guías de Operación Paso a Paso.</span></li>
+              <li class="flex items-start"><CheckCircle class="w-5 h-5 text-primary-green shrink-0 mr-3 mt-0.5" /><span class="text-sm text-gray-600 font-medium">Herramientas Gestión Clientes y Proveedores.</span></li>
+              <li class="flex items-start"><CheckCircle class="w-5 h-5 text-primary-green shrink-0 mr-3 mt-0.5" /><span class="text-sm text-gray-600 font-medium">Implementación de Mejora Continua (Ciclo PHVA).</span></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- BANNER DE ACLARACIÓN -->
+        <div class="bg-yellow-50/80 border border-yellow-200 rounded-xl p-6 text-center max-w-4xl mx-auto shadow-sm">
+          <p class="text-yellow-800 font-medium text-sm md:text-base">
+            <span class="text-xl mr-2">⚠️</span> <strong>Nota Importante:</strong> Los planes anteriores corresponden a la etapa de Diseño y Documentación. La normativa exige que el sistema se mantenga vivo y en ejecución.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fase 2: Implementación y Mantenimiento -->
+    <section class="py-24 bg-white border-t border-gray-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-2 gap-12 items-center">
+          <div>
+             <div class="inline-flex items-center space-x-2 text-primary-green mb-4">
+              <Settings class="w-6 h-6 animate-spin-slow text-primary-green" />
+              <span class="font-bold text-sm uppercase tracking-wider">Mantenimiento Mensual</span>
+            </div>
+            <h2 class="text-3xl lg:text-4xl font-montserrat font-bold text-primary-blue mb-6">Plan de Mantenimiento</h2>
+            <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+              Nos encargamos de que el diseño sea una realidad diaria. Incluye acompañamiento continuo, ejecución del plan de trabajo, capacitaciones y auditorías. <strong>Es la tranquilidad de tener un profesional a cargo de tu cumplimiento y organización.</strong>
+            </p>
+            <a href="#contacto" class="inline-flex justify-center items-center px-8 py-4 bg-primary-green text-white font-semibold rounded-lg hover:bg-primary-green/90 transition-all shadow-md mt-4">
+              Agenda tu Consultoría
+            </a>
+          </div>
+          <div class="bg-gray-50 rounded-3xl p-8 lg:p-12 border border-gray-100 shadow-sm">
+             <div class="space-y-8">
+                <!-- Punto 1 -->
+                <div class="flex items-start">
+                  <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary-blue/10 flex items-center justify-center mr-4">
+                    <ShieldCheck class="w-6 h-6 text-primary-blue" />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-800 text-lg">Ejecución Constante</h4>
+                    <p class="text-sm text-gray-500">Pasamos del documento a la acción, organizando a tu equipo mes a mes sin frenar ventas.</p>
+                  </div>
+                </div>
+                <!-- Punto 2 -->
+                <div class="flex items-start">
+                  <div class="flex-shrink-0 w-12 h-12 rounded-full bg-primary-green/10 flex items-center justify-center mr-4">
+                    <TrendingUp class="w-6 h-6 text-primary-green" />
+                  </div>
+                  <div>
+                    <h4 class="font-bold text-gray-800 text-lg">Respaldo ante Inspecciones</h4>
+                    <p class="text-sm text-gray-500">Estamos contigo para defender el sistema si llega el Ministerio de Trabajo o la ARL.</p>
+                  </div>
+                </div>
+             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección Metodología / Diferenciador -->
+    <section id="metodologia" class="py-24 bg-gray-50 border-t border-gray-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-20">
+          <span class="text-primary-green font-bold tracking-wider text-sm uppercase">Nuestra Metodología</span>
+          <h2 class="text-3xl lg:text-4xl font-montserrat font-bold text-primary-blue mt-2 mb-4">Así transformamos tu empresa</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20 relative">
+          <!-- Línea conectora visual (solo desktop) -->
+          <div class="hidden md:block absolute top-[48px] left-[12.5%] right-[12.5%] h-1 bg-gray-200 z-0"></div>
+          
+          <!-- Paso 1 -->
+          <div class="relative z-10 flex flex-col items-center text-center">
+            <div class="w-24 h-24 rounded-full bg-white shadow-lg border-4 border-gray-50 flex items-center justify-center mb-6 text-primary-blue hover:scale-105 transition-transform">
+              <Search class="w-10 h-10" />
+            </div>
+            <h4 class="text-xl font-bold text-gray-800 mb-3">1. Diagnóstico 360°</h4>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              Evaluamos tu operación mediante sesiones por videoconferencia o visitas presenciales para entender tu día a día, identificando requisitos legales y oportunidades de mejora.
+            </p>
+          </div>
+
+          <!-- Paso 2 -->
+          <div class="relative z-10 flex flex-col items-center text-center">
+            <div class="w-24 h-24 rounded-full bg-white shadow-lg border-4 border-gray-50 flex items-center justify-center mb-6 text-primary-green hover:scale-105 transition-transform">
+              <PenTool class="w-10 h-10" />
+            </div>
+            <h4 class="text-xl font-bold text-gray-800 mb-3">2. Diseño Práctico</h4>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              Creamos herramientas, manuales y formatos simplificados que realmente aporten valor y faciliten el trabajo de tu equipo.
+            </p>
+          </div>
+
+          <!-- Paso 3 -->
+          <div class="relative z-10 flex flex-col items-center text-center">
+            <div class="w-24 h-24 rounded-full bg-white shadow-lg border-4 border-gray-50 flex items-center justify-center mb-6 text-teal-600 hover:scale-105 transition-transform">
+              <Users class="w-10 h-10" />
+            </div>
+            <h4 class="text-xl font-bold text-gray-800 mb-3">3. Cultura y Entrenamiento</h4>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              Capacitamos a tu personal para asegurar que el conocimiento operativo y de seguridad perdure en la empresa.
+            </p>
+          </div>
+
+          <!-- Paso 4 -->
+          <div class="relative z-10 flex flex-col items-center text-center">
+            <div class="w-24 h-24 rounded-full bg-white shadow-lg border-4 border-gray-50 flex items-center justify-center mb-6 text-primary-blue hover:scale-105 transition-transform">
+              <TrendingUp class="w-10 h-10" />
+            </div>
+            <h4 class="text-xl font-bold text-gray-800 mb-3">4. Gestión y Evolución</h4>
+            <p class="text-sm text-gray-600 leading-relaxed">
+              Te acompañamos mes a mes verificando los procesos, para que el cumplimiento legal impulse tu productividad.
+            </p>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <p class="inline-block bg-primary-blue text-white px-8 py-5 rounded-xl font-medium shadow-md text-lg italic">
+            "Diseñamos sistemas que tu equipo sí entiende y herramientas que tu negocio sí necesita."
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="py-20 bg-gray-50 border-t border-gray-100">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-montserrat font-bold text-primary-blue mb-4">Preguntas Frecuentes sobre el SG-SST</h2>
+          <p class="text-gray-600">Resolvemos tus principales dudas acerca de la normatividad corporativa vigente (Resolución 0312 de 2019).</p>
+        </div>
+        
+        <div class="space-y-4">
+          <details class="group bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-sm [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-primary-blue">
+              <span>¿Debo implementar el SG-SST en mi empresa si es muy pequeña?</span>
+              <span class="transition group-open:rotate-180">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </summary>
+            <div class="text-gray-600 px-6 pb-6 text-sm leading-relaxed">
+              <strong>Sí.</strong> Empresas grandes, medianas, micro y pequeñas empresas, negocios o personas naturales que empleen personal (sin importar el tipo de contrato) por más de 30 días, están en la obligación legal de realizar la implementación según el Decreto 1072 de 2015 y la Resolución 0312 de 2019.
+            </div>
+          </details>
+
+          <details class="group bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-sm [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-primary-blue">
+              <span>¿Si solo tengo empleados por prestación de servicios debo cumplir la norma?</span>
+              <span class="transition group-open:rotate-180">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </summary>
+            <div class="text-gray-600 px-6 pb-6 text-sm leading-relaxed">
+              <strong>Sí.</strong> Están realizando una labor en misión para tu empresa, en las propias instalaciones o en las de tus clientes. En términos de SST, estos "contratistas" tienen los mismos deberes y derechos de cuidado y prevención.
+            </div>
+          </details>
+
+          <details class="group bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-sm [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-primary-blue">
+              <span>¿Qué requisitos debe cumplir el encargado de Diseñar el SG-SST?</span>
+              <span class="transition group-open:rotate-180">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </summary>
+            <div class="text-gray-600 px-6 pb-6 text-sm leading-relaxed">
+              <p class="mb-2">El perfil depende del riesgo y la estructura de tu empresa según lo designa la Ley, por eso en Skala cuentas con un Ingeniero Especialista. La norma exige:</p>
+              <ul class="list-disc pl-5 space-y-1">
+                <li><strong>Empresas de riesgo 1, 2 y 3:</strong> Profesionales o tecnólogos con licencias vigentes y curso de 50 horas de SST (sujeto a la cantidad de trabajadores).</li>
+                <li><strong>Riesgos 4 y 5 o de más de 50 empleados:</strong> Profesionales o Especialistas certificados en SST.</li>
+              </ul>
+            </div>
+          </details>
+
+          <details class="group bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-sm [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-primary-blue">
+              <span>¿Aplica para entidades sin ánimo de lucro o copropiedades residenciales?</span>
+              <span class="transition group-open:rotate-180">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </summary>
+            <div class="text-gray-600 px-6 pb-6 text-sm leading-relaxed">
+              <strong>Sí.</strong> Las entidades sin ánimo de lucro con trabajadores son empleadores obligados. Las Propiedades Horizontales (P.H.) también están obligadas debido a que el personal contratista (seguridad, aseo, etc.) son trabajadores en misión en la copropiedad, adquiriendo un vínculo de corresponsabilidad directa.
+            </div>
+          </details>
+
+          <details class="group bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-sm [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-primary-blue">
+              <span>¿Por qué mi negocio necesita tener una Misión y una Visión?</span>
+              <span class="transition group-open:rotate-180">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </summary>
+            <div class="text-gray-600 px-6 pb-6 text-sm leading-relaxed">
+              Piensa en la <strong>Misión</strong> como el papel que juega tu negocio hoy (qué haces, por qué lo haces y para quién) y en la <strong>Visión</strong> como la meta a dónde quieres llegar en el futuro. Tenerlas claras ayuda a que tus trabajadores no solo "vayan a trabajar por un sueldo", sino que entiendan hacia dónde rema el barco y se comprometan de verdad con hacer crecer la empresa.
+            </div>
+          </details>
+
+          <details class="group bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-sm [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-primary-blue">
+              <span>¿Para qué sirve crear un Organigrama si somos muy pocos empleados?</span>
+              <span class="transition group-open:rotate-180">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </summary>
+            <div class="text-gray-600 px-6 pb-6 text-sm leading-relaxed">
+              Un organigrama es simplemente un "mapa" visual que muestra quién hace qué y quién lidera a quién. Incluso si son solo 3 personas, esto evita que se crucen las tareas, que alguien se sobrecargue de trabajo, o que la gente se confunda sobre a quién deben reportar o pedir permisos. En resumen, trae orden y claridad inmediata.
+            </div>
+          </details>
+
+          <details class="group bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-sm [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-primary-blue">
+              <span>¿Qué es un "Sistema de Calidad" y cómo ayuda a mis ventas?</span>
+              <span class="transition group-open:rotate-180">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </summary>
+            <div class="text-gray-600 px-6 pb-6 text-sm leading-relaxed">
+              Un Sistema de Calidad es, en palabras sencillas, <strong>organizar tu forma de trabajar para que las cosas salgan siempre bien a la primera</strong>. Por ejemplo, asegurarte de que tu producto estrella siempre sepa igual, o que tu servicio siempre se entregue a tiempo. Esto reduce costosos errores, disminuye quejas y genera clientes felices que te vuelven a comprar y te recomiendan.
+            </div>
+          </details>
+
+          <details class="group bg-white border border-gray-200 rounded-xl overflow-hidden hover:shadow-sm [&_summary::-webkit-details-marker]:hidden">
+            <summary class="flex justify-between items-center font-bold cursor-pointer list-none p-6 text-primary-blue">
+              <span>He escuchado sobre "Gestión del Conocimiento", ¿qué significa?</span>
+              <span class="transition group-open:rotate-180">
+                <svg fill="none" height="24" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" width="24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+              </span>
+            </summary>
+            <div class="text-gray-600 px-6 pb-6 text-sm leading-relaxed">
+              Imagina que tu mejor empleado o la única persona que sabe hacer una tarea clave decide renunciar mañana. Si él se va, ¿se lleva "la receta secreta" con él? La <strong>gestión del conocimiento</strong> consiste simplemente en documentar (escribir, grabar o hacer manuales de) esos procesos importantes. Así, el conocimiento le pertenece a la empresa y, si ingresa alguien nuevo, aprenderá rapidísimo sin frenar nunca tu operación.
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lead Magnet -->
+    <section class="py-20 bg-primary-blue">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl font-montserrat font-bold text-white mb-6">
+          ¿No sabes si cumples con lo básico de la ley?
+        </h2>
+        <p class="text-primary-blue/20 text-blue-100 mb-8 max-w-2xl mx-auto">
+          Descarga nuestro Checklist Gratuito: "¿Cumple tu empresa con las exigencias puntuales para evitar sanciones?". Una autoevaluación rápida en 5 minutos basada en la Resolución 0312.
+        </p>
+        <form class="flex flex-col sm:flex-row gap-4 justify-center max-w-lg mx-auto">
+          <input type="email" placeholder="Tu correo electrónico" class="px-4 py-3 rounded-lg flex-1 border-0 focus:ring-2 focus:ring-primary-green outline-none" required />
+          <button type="submit" class="px-6 py-3 bg-primary-green text-white font-bold rounded-lg hover:bg-primary-green/90 transition-colors flex items-center justify-center">
+            Descargar Checklist
+            <Download class="ml-2 w-4 h-4" />
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Autoridad -->
+    <section id="nosotros" class="py-24 bg-gray-50">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-3xl overflow-hidden shadow-sm border border-gray-100 grid md:grid-cols-5">
+          <div class="md:col-span-2 bg-gray-200 min-h-[300px] relative">
+            <!-- Espacio para la foto del Ingeniero -->
+            <div class="absolute inset-0 flex items-center justify-center text-gray-400 p-8 text-center bg-primary-blue/5">
+              <span>[Espacio para Fotografía Profesional del Ingeniero en su entorno de trabajo]</span>
+            </div>
+          </div>
+          <div class="md:col-span-3 p-10 lg:p-14 flex flex-col justify-center">
+            <div class="inline-flex items-center space-x-2 text-primary-green mb-4">
+              <Award class="w-5 h-5" />
+              <span class="font-bold text-sm uppercase tracking-wider">Líder Consultor</span>
+            </div>
+            <h3 class="text-3xl font-montserrat font-bold text-primary-blue mb-2">Ingeniero Industrial Especialista</h3>
+            <p class="text-sm text-gray-500 mb-6">Especialista en Sistemas Integrados de Gestión (SIG)</p>
+            <p class="text-gray-600 mb-6 leading-relaxed">
+              "Con años de experiencia optimizando procesos productivos y garantizando la seguridad en el entorno laboral, fundé Skala para acercar la consultoría de alto nivel a las microempresas de Colombia. Tu negocio merece las mismas herramientas de organización que las grandes corporaciones, adaptadas a tu presupuesto."
+            </p>
+            <div>
+              <a href="#" class="inline-flex items-center text-primary-blue font-semibold hover:text-primary-green transition-colors">
+                <Linkedin class="w-5 h-5 mr-2" />
+                Conectar en LinkedIn
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-[#0f192b] pt-16 pb-8 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12 border-b border-white/10 pb-12">
+        <div class="md:col-span-2">
+          <span class="font-montserrat font-bold text-2xl tracking-tight text-white mb-4 block">
+            SKALA <span class="text-primary-green">Gestión</span>
+          </span>
+          <p class="text-gray-400 max-w-sm mb-6 text-sm">
+            Organiza, Implementa y Escala. Ingeniería industrial especializada para el desarrollo estructurado de las MiPyMEs en Colombia.
+          </p>
+        </div>
+        
+        <div>
+          <h4 class="font-bold text-white mb-4 uppercase text-sm tracking-wider">Enlaces Rápidos</h4>
+          <ul class="space-y-3 text-sm text-gray-400">
+            <li><a href="#servicios" class="hover:text-primary-green transition-colors">Servicios</a></li>
+            <li><a href="#metodologia" class="hover:text-primary-green transition-colors">Nuestra Metodología</a></li>
+            <li><a href="#nosotros" class="hover:text-primary-green transition-colors">Sobre Nosotros</a></li>
+            <li><a href="#contacto" class="hover:text-primary-green transition-colors">Contacto</a></li>
+          </ul>
+        </div>
+        
+        <div id="contacto">
+          <h4 class="font-bold text-white mb-4 uppercase text-sm tracking-wider">Contacto</h4>
+          <ul class="space-y-3 text-sm text-gray-400">
+            <li>📍 Colombia (Virtual y Presencial)</li>
+            <li>✉️ contacto@skalagestion.com</li>
+            <!-- Formato de Numero Colombia -->
+            <li>📞 +57 300 000 0000</li> 
+          </ul>
+        </div>
+      </div>
+      
+      <div class="text-center text-xs text-gray-500 flex flex-col md:flex-row justify-between items-center">
+        <p>&copy; 2026 Skala Gestión Integral. Todos los derechos reservados.</p>
+        <div class="space-x-4 mt-4 md:mt-0">
+          <a href="#" class="hover:text-white transition-colors">Política de Privacidad</a>
+          <a href="#" class="hover:text-white transition-colors">Términos de Servicio</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <FloatingWhatsApp phoneNumber="573000000000" message="Hola, estoy en la web de Skala y me gustaría agendar una consultoría gratuita." />
 </Layout>

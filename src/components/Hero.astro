@@ -1,0 +1,102 @@
+---
+import { ArrowRight, ShieldCheck, Building2, TrendingUp } from 'lucide-astro';
+---
+
+<section class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+  <!-- Background Decoration -->
+  <div class="absolute inset-0 z-0 bg-[#f8fafc]">
+    <div class="absolute right-0 top-0 w-1/2 h-full bg-primary-blue/5 rounded-l-[100px] transform translate-x-1/3"></div>
+    <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMSIgY3k9IjEiIHI9IjEiIGZpbGw9InJnYmEoMjAsIDMzLCA2MSwgMC4wNykiLz48L3N2Zz4=')] opacity-50"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <div class="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+      
+      <!-- Text Content -->
+      <div class="text-left space-y-8">
+        <div class="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm border border-primary-green/20 px-4 py-2 rounded-full shadow-sm">
+          <ShieldCheck class="w-5 h-5 text-primary-green" />
+          <span class="text-sm font-semibold text-primary-blue tracking-wide">🚀 Soluciones a la medida para negocios en crecimiento</span>
+        </div>
+        
+        <h1 class="text-5xl lg:text-6xl font-montserrat font-extrabold text-primary-blue leading-tight shadow-sm">
+          Skala: <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-green to-teal-500">Ingeniería y Seguridad Integral</span> para Microempresas
+        </h1>
+        
+        <p class="text-lg lg:text-xl text-gray-dark font-light max-w-xl leading-relaxed">
+          Transformamos tu operación: de comerciante empírico a empresario estructurado. Implementamos tu SST legal y fortalecemos tu Estructura Organizacional, Gestión del Conocimiento y Procesos eficientes, sin burocracia.
+        </p>
+        
+        <div class="flex flex-col sm:flex-row gap-4 pt-4">
+          <a href="#contacto" class="inline-flex justify-center items-center px-8 py-4 bg-primary-green text-white font-semibold rounded-lg hover:bg-primary-green/90 transition-all hover:scale-105 shadow-lg shadow-primary-green/30 group">
+            Agenda una Consultoría Gratuita
+            <ArrowRight class="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </a>
+          <a href="#servicios" class="inline-flex justify-center items-center px-8 py-4 bg-white text-primary-blue border-2 border-primary-blue/10 font-semibold rounded-lg hover:border-primary-blue/30 hover:bg-gray-50 transition-all">
+            Explorar Soluciones
+          </a>
+        </div>
+      </div>
+
+      <!-- Vitrina de Soluciones Integradas (Mini-Cards) -->
+      <div class="relative hidden lg:flex flex-col gap-5 pl-8">
+        
+        <!-- Card 1 -->
+        <div class="bg-white rounded-xl p-6 shadow-xl shadow-gray-200/50 border border-gray-100 flex items-start gap-5 transform hover:-translate-y-1 transition-all duration-300">
+          <div class="w-14 h-14 rounded-xl bg-primary-green/10 text-primary-green flex items-center justify-center shrink-0">
+            <ShieldCheck class="w-7 h-7" />
+          </div>
+          <div>
+            <h3 class="font-bold text-lg text-primary-blue mb-1">Implementación de SG-SST</h3>
+            <ul class="text-sm text-gray-500 space-y-1.5">
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary-green shrink-0"></span> Microempresas Riesgo I, II, III
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary-green shrink-0"></span> Tranquilidad y Cumplimiento Legal
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white rounded-xl p-6 shadow-xl shadow-gray-200/50 border border-gray-100 flex items-start gap-5 transform translate-x-6 hover:translate-x-4 transition-all duration-300">
+          <div class="w-14 h-14 rounded-xl bg-primary-blue/10 text-primary-blue flex items-center justify-center shrink-0">
+            <Building2 class="w-7 h-7" />
+          </div>
+          <div>
+            <h3 class="font-bold text-lg text-primary-blue mb-1">Estructura Organizacional</h3>
+            <ul class="text-sm text-gray-500 space-y-1.5">
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary-blue shrink-0"></span> Misión, Visión y Valores
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-primary-blue shrink-0"></span> Organigrama y Funciones
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white rounded-xl p-6 shadow-xl shadow-gray-200/50 border border-gray-100 flex items-start gap-5 transform hover:-translate-y-1 transition-all duration-300">
+          <div class="w-14 h-14 rounded-xl bg-teal-500/10 text-teal-600 flex items-center justify-center shrink-0">
+            <TrendingUp class="w-7 h-7" />
+          </div>
+          <div>
+            <h3 class="font-bold text-lg text-primary-blue mb-1">Gestión del Conocimiento y Procesos</h3>
+            <ul class="text-sm text-gray-500 space-y-1.5">
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-teal-500 shrink-0"></span> Estandarización de Operaciones
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-teal-500 shrink-0"></span> Inducción y Mejora Continua
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+      
+    </div>
+  </div>
+</section>
